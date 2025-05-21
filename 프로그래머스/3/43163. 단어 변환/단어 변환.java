@@ -1,9 +1,8 @@
 import java.util.*;
 class Solution {
     public boolean[] visited;
-    public int[] answer;
     public int solution(String begin, String target, String[] words) {
-        // targer 단어가 words에 없으면 0 반환
+        // target 단어가 words에 없으면 0 반환
         boolean containWord = false;
         
         for(String str : words){
