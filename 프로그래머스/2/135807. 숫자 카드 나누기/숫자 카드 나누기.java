@@ -3,7 +3,6 @@ class Solution {
     boolean div = false;
     public int solution(int[] arrayA, int[] arrayB) {
         int max = 0;
-        List<Integer> aList = new ArrayList<>();
         // arrayA = 철수가 가진 숫자
         // arrayB = 영희가 가진 숫자
         
