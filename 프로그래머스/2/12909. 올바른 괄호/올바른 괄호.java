@@ -1,25 +1,18 @@
 import java.util.*;
 class Solution {
     boolean solution(String s) {
-        Queue<Character> q = new LinkedList<>();
-        for(int i=0; i<s.length(); i++){
-            q.add(s.charAt(i));
-        }
+        // 괄호 처리
+        Stack<Character> st = new Stack<>();
         
-        // 괄호의 시작이 )일 경우
-        if(q.peek() == ')')
-            return false;
-        
-        int count = 0;
-        while(!q.isEmpty()){
-            if(q.poll() == '('){
-                count++;
+        for(char c : s.toCharArray()){
+            if(c=='('){
+                st.push(c);
             }else{
-                count--;
-                if(count < 0) 
+                if(st.isEmpty())
                     return false;
+                st.pop();
             }
         }
-        return count==0;
+        return st.isEmpty();
     }
 }
