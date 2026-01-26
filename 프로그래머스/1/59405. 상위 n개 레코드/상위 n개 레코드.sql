@@ -1,0 +1,7 @@
+WITH ordering AS (
+    SELECT NAME, RANK() OVER(ORDER BY DATETIME ASC) AS ord
+    FROM ANIMAL_INS
+)
+SELECT NAME
+FROM ordering
+WHERE ord = 1
